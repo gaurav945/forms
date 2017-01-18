@@ -28,7 +28,7 @@ $(document).ready(function () {
 		var playerid = $(this).parent().next().find('iframe').attr('src').split('https://www.youtube.com/embed/')[1];
 		console.log(playerid);
 
-		$('body').prepend($($(this).parent().children()[1]).find('h1').html()); //the scene for now, is as is written below :
+		// $('body').prepend($($(this).parent().children()[1]).find('h1').html()); //the scene for now, is as is written below :
 		// if you keep ticking it, on & off, it will keep on prepending it to the body & also, for the first 10 cartoons, you are not 
 		// prepending anything to the body, so onload, they will not get prepended, if they have been ticked.
 
@@ -122,6 +122,7 @@ $(document).ready(function () {
 								'" frameborder="0" allowfullscreen></iframe>' + 
 								'</div>'
 							)
+							$('body').prepend(name)
 						}
 					}
 					$('body').css('overflow', 'auto');

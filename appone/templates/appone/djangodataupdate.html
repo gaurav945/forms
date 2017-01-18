@@ -1,0 +1,17 @@
+<!--This is where we will be testing updating the database.-->
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		{% load static %}
+			<script type="text/javascript" src="{% static 'appone/js/jquery.js' %}"></script>
+			<script type="text/javascript" src="{% static 'appone/js/djangodataupdate.js' %}"></script>
+			<title>Updating Django Database</title>
+	</head>
+
+	<body>
+		<div id="checker" style="display : none">{{data}}</div>
+		<input type="checkbox" id="testing" name="vehicle" value="Car">I have a car<br>
+	</body>
+
+</html>

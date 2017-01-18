@@ -1,0 +1,49 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script src="/static/appone/js/ajaxcall.js"></script>
+<script src='/static/appone/js/jquery.counterup.js'></script>
+<script src='/static/appone/js/waypoint.js'></script>
+
+<!--Importing Bootstrap here-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-
+BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!--####-->
+
+<html>
+Please enter the values that you need over here :
+
+	<form method="POST" action='/output_stuff/'>
+		{% csrf_token %}
+
+		<input type='text' name='name' value='Your name'>
+		<input type='text' name='nickname' value='Your nickname'>
+		<input type='submit'>
+
+	</form>
+
+	<div class="dropdown">
+		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+		<span class="caret"></span></button>
+		<ul class="dropdown-menu">
+			<li><a href="#">HTML</a></li>
+			<li><a href="#">CSS</a></li>
+			<li><a href="#">JavaScript</a></li>
+		</ul>
+	</div>
+
+	<form id='addingForm' class='formone'>
+		{% csrf_token %}
+		<p>You can add your 2 numbers here : </p>
+		<input class='no1' type='text' name='no1' value='1'> + <input class='no2' type='text' name='no2' value='2'>
+		<input class='submit-button' type='submit' class='submit-button'>
+	</form>
+
+	<div>
+	<!--This is your output : <input type='text' class='output-class'>-->
+	This is your output : <span class='final-sol'></span>
+	</div>
+
+</html>

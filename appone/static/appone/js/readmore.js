@@ -91,35 +91,45 @@ $(document).ready(function () {
 						// p2 = line2 + num + line2r;
 						// $('body').append(p2);
 
-						var name = response[i].fields.text;
+						var name;
+						if (response[i].fields.text.length >= 22) {
+							name = response[i].fields.text.slice(0, 22) + '...';
+						}
+						else {
+							name = response[i].fields.text;
+						}
 						var num = response[i].fields.title;
 						var val = response[i].fields.value;
 
 						if (val == false) {
 							$('.main-content').append(
+								'<div class="cartoon col-lg-4">' + 
 								'<div class="content" style="height : 100px">' + 
 								'<input type="checkbox" class="wish" name="wisher" value="checker" style="float : left; margin-top : 40px">' + 
-								'<div class="title-class" style="float : left"><span class="title stuff" style="margin-right : 60%"><h1> ' + 
+								'<div class="title-class" style="float : left"><span class="title stuff" style="margin-right : 60%"><h3> ' + 
 								name + 
-								'</h1></span></div></div>' + 
+								'</h3></span></div></div>' + 
 								'<div id="iframe" style="float : left; width : 100%">' + 
-								'<iframe width="400" height="225" src="https://www.youtube.com/embed/' + 
+								'<iframe width="330" height="186" src="https://www.youtube.com/embed/' + 
 								num + 
 								'" frameborder="0" allowfullscreen></iframe>' + 
+								'</div>' +
 								'</div>'
 							)
 						}
 						else {
 							$('.main-content').append(
+								'<div class="cartoon col-lg-4">' + 
 								'<div class="content" style="height : 100px">' + 
 								'<input type="checkbox" class="wish" name="wisher" value="checker" checked style="float : left; margin-top : 40px">' + 
-								'<div class="title-class" style="float : left"><span class="title stuff" style="margin-right : 60%"><h1> ' + 
+								'<div class="title-class" style="float : left"><span class="title stuff" style="margin-right : 60%"><h3> ' + 
 								name + 
-								'</h1></span></div></div>' + 
+								'</h3></span></div></div>' + 
 								'<div id="iframe" style="float : left; width : 100%">' + 
-								'<iframe width="400" height="225" src="https://www.youtube.com/embed/' + 
+								'<iframe width="330" height="186" src="https://www.youtube.com/embed/' + 
 								num + 
 								'" frameborder="0" allowfullscreen></iframe>' + 
+								'</div>' +
 								'</div>'
 							)
 							$('body').prepend(name)

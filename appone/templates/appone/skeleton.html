@@ -1,11 +1,13 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 
 	<head>
 		{% load static %}
+			<link rel="stylesheet" href="{% static 'appone/css/bootstrap.css' %}">
 			<script type="text/javascript" src="{% static 'appone/js/jquery.js' %}"></script>
 			<script type="text/javascript" src="{% static 'appone/js/readmore.js' %}"></script>
 			<title>Browse Cartoons !!</title>
+			<meta charset="utf-8">
 	</head>
 
 	<body>
@@ -14,22 +16,25 @@
 			<iframe width="400" height="225" src="https://www.youtube.com/embed/{{value}}" frameborder="0" allowfullscreen></iframe>
 		{% endfor %}-->
 
-		<div class="main-content">
+		<div class="container main-content">
+			{% csrf_token %}
 			{% for item in data %}
 				<!--<div>{{item.value}}</div>-->
-				<div class="content" style="height : 100px">
-					{% if item.value %}
-						<input type="checkbox" class="wish" name="wisher" value="checker" checked style="float : left; margin-top : 40px">
-					{% else %}
-						<input type="checkbox" class="wish" name="wisher" value="checker" style="float : left; margin-top : 40px">
-					{% endif %}
-					<div class="title-class" style="float : left">
-						<span class="title stuff" style="margin-right : 60%"><h1> {{item.text}} </h1></span>
+				<div class="cartoon col-lg-4">
+					<div class="content" style="height : 100px">
+						{% if item.value %}
+							<input type="checkbox" class="wish" name="wisher" value="checker" checked style="float : left; margin-top : 40px">
+						{% else %}
+							<input type="checkbox" class="wish" name="wisher" value="checker" style="float : left; margin-top : 40px">
+						{% endif %}
+						<div class="title-class" style="float : left">
+							<span class="title stuff" style="margin-right : 60%"><h3>{{item.text|truncatechars:30}}</h3></span>
+						</div>
 					</div>
-				</div>
 
-				<div id="iframe" style="float : left; width : 100%">
-					<iframe width="400" height="225" src="https://www.youtube.com/embed/{{item.title}}" frameborder="0" allowfullscreen></iframe>
+					<div id="iframe" style="float : left; width : 100%">
+						<iframe width="330" height="186" src="https://www.youtube.com/embed/{{item.title}}" frameborder="0" allowfullscreen></iframe>
+					</div>
 				</div>
 			{% endfor %}
 		</div>

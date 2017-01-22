@@ -1,0 +1,8 @@
+{
+  "name": "Something related to cartoons",
+  "description": "Trying to deploy my stuff on Heroku",
+  "image": "heroku/python",
+  "repository": "https://github.com/gaurav945/forms",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ]
+}
